@@ -1,3 +1,25 @@
+/*
+Proyecto de Semáforo Inteligente
+Autor: Ramiro Orlando Chavez Arroyo
+Descripción: Este programa controla un semáforo inteligente utilizando sensores ultrasónicos para detectar la presencia de vehículos en las calles.
+
+El programa utiliza 4 sensores ultrasónicos HC-SR04 para medir la distancia a los vehículos en cada calle. Los pines de trigger y echo de los sensores se definen en las constantes TRIGGER_PIN y ECHO_PIN respectivamente.
+
+El semáforo consta de 2 luces rojas y 2 luces verdes, representando las calles. Los pines de los LEDs se definen en las constantes LED_RED y LED_GREEN respectivamente.
+
+El programa realiza lecturas de los sensores ultrasónicos y actualiza las distancias medidas en el arreglo cm[]. Luego, se verifica si hay vehículos en las calles mediante la función deteccionVehiculo(). Dependiendo del estado del semáforo en cada calle, se realizan los cambios necesarios.
+
+El estado del semáforo se almacena en el arreglo semaforoCalle[], donde semaforoCalle[0] representa el estado de la primera calle y semaforoCalle[1] representa el estado de la segunda calle.
+
+Los contadores contador[] se utilizan para controlar los tiempos y cambios de semáforo. Los valores de tiempo para los cambios de semáforo se definen en el arreglo contadorA[].
+
+La función cambiarLucesSemaforo() se encarga de actualizar las luces del semáforo según el estado de las calles.
+
+El programa muestra información en el monitor serial, incluyendo las distancias medidas por los sensores, los valores de los contadores y otros mensajes de depuración.
+
+Nota: Asegúrate de conectar correctamente los pines de los sensores ultrasónicos y los LEDs de acuerdo a la configuración del programa.
+
+*/
 
 // Constantes de los pines
 const float CM = 0.016949;          // Factor de conversión de tiempo a distancia en centímetros
